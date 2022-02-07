@@ -1,7 +1,7 @@
 import inq from "inquirer";
 import fs from "fs";
 import {table} from "table";
-import lodash from "lodash";
+// import lodash from "lodash";
 
 
 /* WorkFlow
@@ -15,7 +15,7 @@ File
 const ANS={
     q1:"INDIA",
     q2:"Raghav",
-}
+};
 const ques=[
   
     {
@@ -31,10 +31,10 @@ const ques=[
         choices:["Raghav","Keshav","Arpit","Shivam"],
         name:"q2",
         
-    }
+    },
 
 ]
-lodash.shuffle(ques);
+// lodash.shuffle(ques);
 
 const finalQuestions=[
     {
@@ -68,16 +68,18 @@ inq
         score:score,
     };
     parsedscorecard.push(card);
-    fs.writeFileSync("./score.json",JSON.stringify(parsedscorecard),"utf-8");
+    fs.writeFileSync("./score.json",JSON.stringify(parsedscorecard),"utf8");
+    console.log(parsedscorecard);
+
 
 
    const tablecard= parsedscorecard.sort((a,b)=>b.score-a.score).map(scoreCard=>{
            return [scoreCard.name,scoreCard.score];    
         })
 
-
+        console.log(table(tablecard));
 })
-console.log(table(tablecard));
+
    
    
     // console.log(card);
