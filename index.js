@@ -1,7 +1,7 @@
 import inq from "inquirer";
 import fs from "fs";
 import {table} from "table";
-// import lodash from "lodash";
+//import lodash from "lodash";
 
 
 /* WorkFlow
@@ -34,7 +34,7 @@ const ques=[
     },
 
 ]
-// lodash.shuffle(ques);
+ //lodash.shuffle(ques);
 
 const finalQuestions=[
     {
